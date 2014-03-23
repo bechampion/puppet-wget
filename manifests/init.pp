@@ -20,7 +20,7 @@ exec {
          command=>"tar xvfz ${destination}/${app}.t* -C ${destination}/",
          path => "/usr/local/bin:/bin:/usr/bin",
          creates => "${destination}/${app}/",
-         #require => [Exec["$app"]];
+         require => [Exec["$app"]];
 }
 }
 }
