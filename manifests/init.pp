@@ -26,7 +26,7 @@ exec {
 }
 class run ( $command ,  $path ) {
     exec { "runit" :
-      environment => [JAVA_HOME=/usr/lib/jvm/java-7-oracle/],
+      environment => ["JAVA_HOME=/usr/lib/jvm/java-7-oracle/"],
       command => "${path}/${command}",
       returns => [0,1]
     } 
