@@ -14,7 +14,8 @@ exec {
       "$app" :
           command => "wget $url -P $destination",
           path => "/usr/local/bin:/bin:/usr/bin",
-          creates => ["${destination}/${app}.tar.gz","${destination}/${app}.tgz"];
+          creates => ["${destination}/${app}.tar.gz","${destination}/${app}.tgz"],
+          timeout => 0
     
       "$app-untar" :
          command=>"tar xvfz ${destination}/${app}.t* -C ${destination}/",
